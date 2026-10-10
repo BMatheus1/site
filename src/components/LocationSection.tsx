@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function LocationSection() {
   return (
-    <section className="location-section" id="localizacao" aria-labelledby="localizacao-title">
+    <section className="location-section" id="localizacao" aria-labelledby="localizacao-title" tabIndex={-1}>
       <div className="location-section__texture" aria-hidden="true" />
       <Reveal className="page-shell location-section__content">
         <div className="location-section__icon"><MapPinned aria-hidden="true" /></div>
@@ -18,3 +18,4 @@ export function LocationSection() {
     </section>
   );
 }
+

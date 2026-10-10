@@ -1,6 +1,5 @@
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
 import { LocationSection } from "./components/LocationSection";
 import { PhotoGallery } from "./components/PhotoGallery";
 import { QuickLinks } from "./components/QuickLinks";
@@ -11,11 +10,10 @@ export default function App() {
   return (
     <>
       <Seo />
-      <Hero />
       <main>
         <QuickLinks />
-        <PhotoGallery />
         <RestaurantInfo />
+        <PhotoGallery />
         <LocationSection />
       </main>
       <Footer />

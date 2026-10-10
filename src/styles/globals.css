@@ -257,3 +257,76 @@ img { display: block; max-width: 100%; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Início direto: marca compacta e opções imediatamente visíveis */
+.landing-start {
+  position: relative;
+  min-height: 100svh;
+  padding: 22px 0 72px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(199, 168, 120, 0.16), transparent 31%),
+    var(--ivory);
+}
+.landing-start::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  pointer-events: none;
+  border: 1px solid rgba(199, 168, 120, 0.38);
+}
+.compact-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+.compact-brand img {
+  width: 82px;
+  height: 72px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border: 1px solid rgba(199, 168, 120, 0.55);
+  border-radius: 19px;
+  background: var(--espresso);
+  mix-blend-mode: multiply;
+}
+.compact-brand .eyebrow { margin-bottom: 5px; font-size: 0.6rem; }
+.compact-brand h1 {
+  margin: 0;
+  color: var(--espresso);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.7rem, 7vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.compact-brand div > p:last-child {
+  max-width: 460px;
+  margin: 7px 0 0;
+  color: var(--warm-gray);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.quick-heading { margin-top: 34px; margin-bottom: 24px; }
+.quick-heading h2 { font-size: clamp(2rem, 8vw, 3.3rem); }
+.quick-heading > p:last-child { margin-top: 10px; }
+.landing-start .quick-grid { grid-template-columns: 1fr; gap: 11px; }
+.landing-start .quick-card { min-height: 84px; }
+#informacoes, #localizacao { scroll-margin-top: 18px; }
+#informacoes:focus, #localizacao:focus { outline: none; }
+
+@media (min-width: 680px) {
+  .landing-start { padding-top: 34px; }
+  .compact-brand { padding-bottom: 28px; }
+  .compact-brand img { width: 94px; height: 82px; }
+  .quick-heading { margin-top: 42px; }
+}
+
+@media (min-width: 1024px) {
+  .landing-start { display: grid; align-items: center; padding-block: 42px; }
+  .landing-start .narrow-shell { width: min(100% - 64px, 760px); }
+  .info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

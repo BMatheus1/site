@@ -6,8 +6,10 @@ export type GalleryImage = {
 };
 
 export type ExtraInfo = {
+  type: "parking" | "note";
   label: string;
   value: string;
+  description?: string;
 };
 
 export const restaurant = {
@@ -29,13 +31,14 @@ export const restaurant = {
   menuUrl: "/cardapio.pdf",
   instagram: "",
   openingHours: [] as string[],
-  extraInfo: [] as ExtraInfo[],
-  heroImage: {
-    src: "/images/prato-camarao-romantico.webp",
-    alt: "Prato de camarões servido em uma mesa romântica à luz de velas",
-    width: 1024,
-    height: 1022,
-  },
+  extraInfo: [
+    {
+      type: "parking",
+      label: "Estacionamento",
+      value: "Estacionamento gratuito no local",
+      description: "Mais comodidade para sua visita.",
+    },
+  ] as ExtraInfo[],
   logoImage: {
     src: "/images/marca-cantinho-do-luiz.webp",
     alt: "Marca Cantinho do Luiz com duas taças",
@@ -70,4 +73,3 @@ export const fullAddress = `${restaurant.address.street}, ${restaurant.address.n
 export const whatsappUrl = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(restaurant.whatsappMessage)}`;
 
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
-

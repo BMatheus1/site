@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock3, MapPin, MessageCircle } from "lucide-react";
+import { ArrowUpRight, CarFront, Clock3, Info, MapPin, MessageCircle } from "lucide-react";
 import { fullAddress, mapsUrl, restaurant, whatsappUrl } from "../config/restaurant";
 import { Reveal } from "./Reveal";
 
@@ -7,16 +7,27 @@ export function RestaurantInfo() {
   const hasExtraInfo = restaurant.extraInfo.length > 0;
 
   return (
-    <section className="section section--cream" id="informacoes" aria-labelledby="informacoes-title">
+    <section className="section section--cream" id="informacoes" aria-labelledby="informacoes-title" tabIndex={-1}>
       <div className="page-shell">
         <Reveal>
           <div className="section-heading section-heading--center">
-            <p className="eyebrow">Informações</p>
+            <p className="eyebrow">Informações úteis</p>
             <h2 id="informacoes-title">Planeje sua visita</h2>
-            <p>Os caminhos mais simples para falar conosco e chegar ao restaurante.</p>
+            <p>Contato, endereço e comodidades para você chegar com tranquilidade.</p>
           </div>
         </Reveal>
         <div className="info-grid">
+          {hasExtraInfo && restaurant.extraInfo.map((item) => {
+            const ExtraIcon = item.type === "parking" ? CarFront : Info;
+            return (
+              <Reveal className="info-card" key={item.label}>
+                <div className="info-card__icon"><ExtraIcon aria-hidden="true" /></div>
+                <p className="info-card__kicker">{item.label}</p>
+                <h3>{item.value}</h3>
+                {item.description && <p>{item.description}</p>}
+              </Reveal>
+            );
+          })}
           <Reveal className="info-card">
             <div className="info-card__icon"><MapPin aria-hidden="true" /></div>
             <p className="info-card__kicker">Endereço</p>
@@ -29,7 +40,7 @@ export function RestaurantInfo() {
             <p className="info-card__kicker">Contato</p>
             <h3>WhatsApp</h3>
             <p>{restaurant.whatsappDisplay}<br />Envie uma mensagem para saber mais.</p>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer">Falar com a gente <ArrowUpRight size={17} aria-hidden="true" /></a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer">Falar conosco <ArrowUpRight size={17} aria-hidden="true" /></a>
           </Reveal>
           {hasHours && (
             <Reveal className="info-card">
@@ -39,12 +50,6 @@ export function RestaurantInfo() {
               {restaurant.openingHours.map((line) => <p key={line}>{line}</p>)}
             </Reveal>
           )}
-          {hasExtraInfo && restaurant.extraInfo.map((item) => (
-            <Reveal className="info-card" key={item.label}>
-              <p className="info-card__kicker">{item.label}</p>
-              <h3>{item.value}</h3>
-            </Reveal>
-          ))}
         </div>
         <span className="sr-only">{fullAddress}</span>
       </div>

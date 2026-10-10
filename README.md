@@ -27,7 +27,7 @@ Todas as informações comerciais ficam em `src/config/restaurant.ts`. Edite ess
 ## Trocar fotografias
 
 1. Coloque os novos arquivos otimizados em `public/images/`.
-2. Atualize `heroImage`, `logoImage`, `shareImage` ou `gallery` em `src/config/restaurant.ts`.
+2. Atualize `logoImage`, `shareImage` ou `gallery` em `src/config/restaurant.ts`.
 3. Informe descrições `alt` objetivas e as dimensões reais de cada imagem.
 4. Prefira WebP ou AVIF com largura máxima adequada ao uso.
 
@@ -56,3 +56,4 @@ npm run build
 ```
 
 O site deve ser validado principalmente em 320, 375, 390, 430, 768, 1024 e 1440 pixels. Teste também o PDF, WhatsApp, Google Maps, navegação por teclado da galeria e preferência de movimento reduzido.
+
