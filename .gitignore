@@ -4,3 +4,5 @@ dist/
 qa/*.png
 qa/results.json
 *.tar.gz
+vite.config.js
+vite.config.d.ts
