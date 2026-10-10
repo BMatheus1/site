@@ -1,7 +1,7 @@
-import { ArrowUpRight, ChevronDown, Info, Instagram, MapPin, Menu, MessageCircle } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Heart, Info, Instagram, MapPin, Menu, MessageCircle } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { MouseEvent } from "react";
-import { restaurant, whatsappUrl } from "../config/restaurant";
+import { reservationWhatsappUrl, restaurant, whatsappUrl } from "../config/restaurant";
 
 type LinkCardProps = {
   href: string;
@@ -71,6 +71,7 @@ export function QuickLinks() {
           <LinkCard href="#informacoes" icon={Info} title="Informações úteis" description="Estacionamento gratuito no local" />
           <LinkCard href="#localizacao" icon={MapPin} title="Como chegar" description="Endereço e rota no Google Maps" />
           <LinkCard href={whatsappUrl} icon={MessageCircle} title="Fale conosco" description={restaurant.whatsappDisplay} external />
+          <LinkCard href={reservationWhatsappUrl} icon={Heart} title="Reserve uma mesa personalizada para seu encontro especial" description="Decoração personalizada para celebrar a ocasião" external />
           {restaurant.instagram && (
             <LinkCard href={restaurant.instagram} icon={Instagram} title="Acompanhe nosso Instagram" description="Novidades e momentos especiais" external />
           )}
@@ -79,3 +80,4 @@ export function QuickLinks() {
     </section>
   );
 }
+

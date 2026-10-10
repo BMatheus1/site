@@ -19,7 +19,8 @@ export const restaurant = {
     "Uma experiência acolhedora, feita para celebrar encontros, sabores e boas memórias.",
   whatsapp: "5511958263030",
   whatsappDisplay: "(11) 95826-3030",
-  whatsappMessage: "Olá! Gostaria de saber mais sobre o Cantinho do Luiz.",
+  whatsappMessage: "Olá, tudo bem? Gostaria de tirar algumas dúvidas.",
+  reservationMessage: "Olá, gostaria de reservar uma mesa com decoração personalizada.",
   address: {
     street: "Rua Amazonas",
     number: "168",
@@ -71,5 +72,7 @@ export const restaurant = {
 export const fullAddress = `${restaurant.address.street}, ${restaurant.address.number}, ${restaurant.address.neighborhood}, ${restaurant.address.city} - ${restaurant.address.state}, CEP ${restaurant.address.zipCode}`;
 
 export const whatsappUrl = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(restaurant.whatsappMessage)}`;
+
+export const reservationWhatsappUrl = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(restaurant.reservationMessage)}`;
 
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;

@@ -38,6 +38,7 @@ const path = require('path');
         instagramVisible: links.some(a => a.textContent.includes('Instagram')),
         menuHref: links.find(a => a.textContent.includes('cardápio'))?.getAttribute('href'),
         whatsappHref: links.find(a => a.textContent.includes('Fale conosco'))?.getAttribute('href'),
+        reservationHref: links.find(a => a.textContent.includes('Reserve uma mesa personalizada'))?.getAttribute('href'),
         directionsHref: links.find(a => a.textContent.includes('Como chegar'))?.getAttribute('href'),
         mapsHref: links.find(a => a.textContent.includes('Abrir no Google Maps'))?.getAttribute('href'),
       };
@@ -87,3 +88,4 @@ const path = require('path');
   console.log(JSON.stringify(results, null, 2));
   await browser.close();
 })().catch(error => { console.error(error); process.exit(1); });
+

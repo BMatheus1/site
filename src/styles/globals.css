@@ -330,3 +330,18 @@ img { display: block; max-width: 100%; }
   .landing-start .narrow-shell { width: min(100% - 64px, 760px); }
   .info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+@media (max-width: 420px) {
+  .landing-start { min-height: auto; padding: 14px 0 52px; }
+  .compact-brand { gap: 13px; padding: 6px 0 17px; }
+  .compact-brand img { width: 72px; height: 63px; border-radius: 16px; }
+  .compact-brand h1 { font-size: 1.7rem; }
+  .compact-brand div > p:last-child { font-size: 0.72rem; }
+  .quick-heading { margin-top: 22px; margin-bottom: 16px; }
+  .quick-heading h2 { font-size: 2.15rem; }
+  .quick-heading > p:last-child { display: none; }
+  .landing-start .quick-grid { gap: 9px; }
+  .landing-start .quick-card { min-height: 74px; padding: 12px 14px; }
+  .landing-start .quick-card__icon { width: 44px; height: 44px; }
+  .landing-start .quick-card__copy strong { font-size: 1.04rem; }
+}
