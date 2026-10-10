@@ -345,3 +345,52 @@ img { display: block; max-width: 100%; }
   .landing-start .quick-card__icon { width: 44px; height: 44px; }
   .landing-start .quick-card__copy strong { font-size: 1.04rem; }
 }
+
+/* Paleta vinho da página inicial */
+.landing-start {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(199, 168, 120, 0.17), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(36, 27, 27, 0.3), transparent 38%),
+    var(--wine);
+}
+.landing-start::before { border-color: rgba(232, 213, 181, 0.34); }
+.landing-start .compact-brand { border-color: rgba(232, 213, 181, 0.2); }
+.landing-start .compact-brand img {
+  border-color: rgba(232, 213, 181, 0.52);
+  background: var(--espresso);
+  mix-blend-mode: normal;
+}
+.landing-start .compact-brand .eyebrow,
+.landing-start .quick-heading .eyebrow { color: var(--gold-light); }
+.landing-start .compact-brand h1,
+.landing-start .quick-heading h2 { color: var(--ivory); }
+.landing-start .compact-brand div > p:last-child,
+.landing-start .quick-heading > p:last-child { color: rgba(248, 243, 234, 0.7); }
+.landing-start .quick-card,
+.landing-start .quick-card--primary {
+  color: var(--ivory);
+  border-color: rgba(232, 213, 181, 0.28);
+  background: rgba(36, 27, 27, 0.5);
+  box-shadow: 0 14px 38px rgba(24, 9, 15, 0.12);
+}
+.landing-start .quick-card--primary {
+  border-color: rgba(232, 213, 181, 0.68);
+  background: rgba(36, 27, 27, 0.72);
+}
+.landing-start .quick-card:hover,
+.landing-start .quick-card--primary:hover {
+  color: var(--ivory);
+  border-color: var(--gold-light);
+  background: rgba(36, 27, 27, 0.82);
+  box-shadow: 0 18px 46px rgba(24, 9, 15, 0.23);
+}
+.landing-start .quick-card__icon,
+.landing-start .quick-card--primary .quick-card__icon {
+  color: var(--gold-light);
+  border-color: rgba(232, 213, 181, 0.56);
+  background: rgba(232, 213, 181, 0.08);
+}
+.landing-start .quick-card__copy small,
+.landing-start .quick-card--primary small { color: rgba(248, 243, 234, 0.64); }
+.landing-start .quick-card__arrow { color: var(--gold-light); }
